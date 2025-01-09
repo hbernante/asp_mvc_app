@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Users";
+}
+
+@model List<User>
+
+<div class="text-center">
+    <h1 class="display-4">Users</h1>
+    </br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Profile Picture</th>
+                <th>Bio</th>
+                <th>Website</th>
+                <th>Hobbies</th>
+                <th>Location</th>
+                <th>Actions</th>
+            </tr>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>@user.Email</td>
+                        <td>@user.Password</td>
+                        <td>@user.ProfilePicture</td>
+                        <td>@user.Bio</td>
+                        <td>@user.Website</td>
+                        <td>@user.Hobbies</td>
+                        <td>@user.Location</td>
+                        <td>
+                            <a asp-action="CreateEditUser" asp-route-id="@user.Id">Edit</a> |
+                            <a asp-action="DeleteUser" asp-route-id="@user.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+    </table>
+</div>

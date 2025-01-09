@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Create / Edit";
+}
+
+@model SocialApp.Models.User
+
+<div class="text-center">
+    <h1 class="display-4">Create or Edit User</h1>
+</div>
+
+<form asp-action="CreateEditUserForm" asp-controller="Home">
+    <label>Id</label>
+    <input hidden asp-for="Id" class="form-control" type="number" placeholder="0"/>
+    <label>First Name</label>
+    <input asp-for="FirstName" class="form-control" type="text" placeholder="First Name"/>
+    <label>Last Name</label>
+    <input asp-for="LastName" class="form-control" type="text" placeholder="Last Name"/>
+    <label>Email</label>
+    <input asp-for="Email" class="form-control" type="email" placeholder="Email"/>
+    <label>Password</label>
+    <input asp-for="Password" class="form-control" type="password"/>
+    <label for="ProfilePicture">Profile Picture</label>
+    <input asp-for="ProfilePicture" class="form-control" type="file" placeholder="Upload Profile Picture"/>
+    <label>Bio</label>
+    <input asp-for="Bio" class="form-control" type="text" placeholder="Bio"/>
+    <label>Website</label>
+    <input asp-for="Website" class="form-control" type="text" placeholder=""/>
+    <label>Hobbies</label>
+    <input asp-for="Hobbies" type="text" class="form-control" placeholder="Enter your hobbies"/>
+    <label>Location</label>
+    <input asp-for="Location" type="text" class="form-control" placeholder="Enter your location"/>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
